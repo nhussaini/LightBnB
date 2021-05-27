@@ -174,7 +174,8 @@ const getAllProperties = function (options, limit = 10) {
     queryParams.push(options.minimum_rating);
     queryString += `AND rating >= $${queryParams.length}`;
   }
-
+  
+  //if options.owner_id exists
   if(options.owner_id) {
     queryParams.push(options.owner_id);
     queryString += `AND owner_id =$${queryParams.length}`;
